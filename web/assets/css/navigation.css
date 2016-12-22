@@ -1,0 +1,22 @@
+﻿#navbar-example{
+	background: #3fc4ba;
+	padding: 5px;
+}
+
+#navbar-example a{
+	color: white;
+	font-size: 1.5em;
+}
+
+#navbar-example li{
+	padding: 0px 15px;
+}
+
+#navbar-example ul,
+#navbar-example .navbar-nav>.open>a,
+#navbar-example .navbar-nav>.open>a:hover,
+#navbar-example .navbar-nav>.open>a:focus,
+#navbar-example .dropdown-menu>li>a:hover,
+#navbar-example .dropdown-menu>li>a:focus{
+	background: #3fc4ba;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description"content="">
+        <meta name="author"     content="">
+        <title>File Manager</title>
+
+        <link rel="stylesheet" href="/assets/css/jquery-ui.min.css"         type="text/css" />
+        <link rel="stylesheet" href="/assets/css/font-awesome.min.css"      type="text/css" />
+        <link rel="stylesheet" href="/assets/css/style.css"                 type="text/css" />
+        <link rel="stylesheet" href="/assets/css/bootstrap.min.css"         type="text/css" />
+        <link rel="stylesheet" href="/assets/css/bootstrap-theme.min.css"   type="text/css" />
+
+        <link rel="stylesheet" href="/assets/filemanager/css/list.css"      type="text/css" />
+        <link rel="stylesheet" href="/assets/filemanager/css/style.css"     type="text/css" />
+        <link rel="stylesheet" href="/assets/filemanager/css/upload.css"    type="text/css" />
+        <link rel="stylesheet" href="/assets/css/navigation.css"            type="text/css" />
+
+    </head>
+    <body>
+        <div class="col-md-12">
+        {% include "navigation.html"%}
+        </div>
+        <div class="col-md-12">
+            <div class="col-md-12"></div>
+            <div id="left-content" class="col-md-3"></div>
+            <div id="right-content" class="col-md-9"></div>
+        </div>
+
+        {% include "/../assets/filemanager/templates/filter.tpl"%}
+        {% include "/../assets/filemanager/templates/list.tpl"  %}
+        {% include "/../assets/filemanager/templates/upload.tpl"%}
+
+        <script src="/assets/js/jquery.min.js"                  ></script>
+        <script src="/assets/js/jquery-ui.min.js"               ></script>
+        <script src="/assets/js/underscore-min.js"              ></script>
+        <script src="/assets/js/backbone-min.js"                ></script>
+        <script src="/assets/js/bootstrap.min.js"               ></script>
+
+
+        <script src="/assets/filemanager/coffeejs/filter.js"></script>
+        <script src="/assets/filemanager/coffeejs/list.js"  ></script>
+        <script src="/assets/filemanager/coffeejs/upload.js"></script>
+        <script src="/assets/filemanager/coffeejs/init.js"  ></script>
+
+    </body>
+</html>

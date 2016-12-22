@@ -1,0 +1,6 @@
+.idea
+data/*
+log/*
+vendor
+web/tmp
+web/assets/files/*

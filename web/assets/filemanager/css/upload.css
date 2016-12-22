@@ -1,0 +1,14 @@
+.upload-drop-file-active{
+    padding: 10px;
+    color: #bf3318;
+    box-shadow: inset 0px 0px 10px #bf3318;
+}
+
+.upload-drop-file-active .upload-drop-file{
+    display: inherit;
+}
+
+.upload-drop-file-active .btn-upload,
+.upload-drop-file{
+    display: none;
+}

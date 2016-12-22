@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description"content="">
+        <meta name="author"     content="">
+        <title>File Manager</title>
+
+        <link rel="stylesheet" href="/assets/css/jquery-ui.min.css"         type="text/css" />
+        <link rel="stylesheet" href="/assets/css/font-awesome.min.css"      type="text/css" />
+        <link rel="stylesheet" href="/assets/css/style.css"                 type="text/css" />
+        <link rel="stylesheet" href="/assets/css/bootstrap.min.css"         type="text/css" />
+        <link rel="stylesheet" href="/assets/css/bootstrap-theme.min.css"   type="text/css" />
+        <link rel="stylesheet" href="/assets/css/navigation.css"            type="text/css" />
+        <link rel="stylesheet" href="/assets/css/countregusers.css"         type="text/css" />
+
+    </head>
+    <body>
+        <div class="col-md-12">
+            {% include "navigation.html"%}
+        </div>
+        <div class="col-md-12">
+            <p>Количество зарегестрированных пользователей:</p>
+            <div id="chartdiv"></div>
+        </div>
+        <script src="/assets/js/jquery.min.js"                  ></script>
+        <script src="/assets/js/jquery-ui.min.js"               ></script>
+        <script src="/assets/js/underscore-min.js"              ></script>
+        <script src="/assets/js/backbone-min.js"                ></script>
+        <script src="/assets/js/bootstrap.min.js"               ></script>
+
+        <script src="/assets/js/amcharts.js"                ></script>
+        <script src="/assets/js/serial.js"                  ></script>
+        <script src="/assets/js/exportmin.js"               ></script>
+        <script src="/assets/js/light.js"                   ></script>
+        <script src="/assets/js/countregusers.js"           ></script>
+
+    </body>
+</html>

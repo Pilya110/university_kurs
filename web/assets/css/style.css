@@ -1,0 +1,180 @@
+body {
+    background-image: url(/assets/css/images/fon.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #464646;
+}
+
+.container-full{
+    /*max-width:1400px;*/
+    margin:auto;
+}
+.content-container {
+    padding: 1rem 1.5rem;
+}
+
+.navbar-nav .nav-link {
+    padding-top: 0.94rem;
+}
+
+.navbar-fixed-top {
+    top: 0;
+    box-shadow: 1px 1px 10px;
+    background: #F7F7F7;
+}
+
+.btn-group-sm>.btn, .btn-sm {
+    padding: 0rem 0.5rem;
+    line-height: 1.5;
+    border-radius: .0rem;
+}
+
+.table td, .table th {
+    padding: .2rem;
+    vertical-align: top;
+    font-size: 14px;
+    border-top: 1px solid #eceeef;
+}
+.table thead td {
+    background: #F5F5F5;
+}
+
+#core_info .table {
+    width: auto;
+}
+.controls-case {
+    margin-bottom: 1rem;
+    text-align: right;
+}
+
+#services_table_blc{
+    margin-bottom: 20px;
+}
+
+.bootstrap-dialog.type-danger .modal-header{
+    background: #960000;
+    color:white;
+}
+.bootstrap-dialog.type-danger .button.close{
+    color: white;
+    opacity: .5;
+}
+
+#core_info {
+    display: block;
+    overflow: hidden;
+}
+
+#service_request_t input{
+    max-width:400px;
+}
+#service_request_t .wrapper{
+    margin-top:10px;
+}
+
+#service_test_output {
+    display: block;
+    border: 1px solid #DADADA;
+    padding: 5px 10px;
+    background: #F8F8F8;
+    max-height: 300px;
+    overflow: auto;
+}
+#service_test_output .response{
+    font-family: monospace;
+    font-size: 12px;
+    margin-bottom: 2px;
+}
+#service_test_output .response div{
+    padding:0px 10px;
+}
+#service_test_output .response .bg-red{
+    background: #FFE1E1;
+}
+#service_test_output .response .bg-green{
+    background: #EFFFEF;
+}
+
+#core_info .blc-3 .mem-chart{
+
+}
+
+/* Translator */
+.wrapper-translator-gui{
+    display:none;
+    border:1px solid #D1D1D1;
+    position:fixed;
+    background:#F6F6F6;
+    bottom:0;
+    left:0;
+    padding:10px;
+    width:800px;
+    height:500px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.31);
+    z-index: 1002;
+}
+.process-code{
+    height:350px;
+    width:100%;
+    font-family: monospace;
+    font-size: 13px;
+}
+.processes-list .list-group-item{
+    position: relative;
+    display: block;
+    padding: 0.1rem 1.25rem;
+    margin-bottom: -1px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    font-size: 0.9em;
+}
+
+.closebtn{
+    background-color: #FFF;
+    border-color: #CBCBCB;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    width: 24px;
+    height: 24px;
+    color: #000;
+    padding: 2px;
+    line-height: 15px;
+    overflow: hidden;
+}
+
+.panel-heading {
+    padding: 5px 15px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0);
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+/* MOCKS */
+.ui-draggable-dragging{
+    z-index: 1001;
+}
+/*.mock-up-desk{
+    background: url(images/grid.jpg);
+    z-index: 1;
+}
+.mock-src{
+    display:block;
+    float:left;
+}
+
+.mock-on-canvas{
+    background-size: 100% 100%;
+    background-position: center center;
+    background-repeat:no-repeat;
+}
+
+.mock-on-canvas.active{
+    box-shadow: 0 0 5px 1px #FF7600;
+}*/
+
+ul li{
+    list-style: none;
+}

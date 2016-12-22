@@ -1,0 +1,13 @@
+{
+    "require": {
+        "crodas/Haanga": "^1.0",
+        "apache/thrift": "*",
+        "slim/slim": "^3.0"
+    },
+    "autoload": {
+        "psr-0": {
+            "rigel" : "src/",
+            "core" : ""
+        }
+    }
+}

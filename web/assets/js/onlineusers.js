@@ -1,0 +1,107 @@
+var chart = AmCharts.makeChart( "chartdiv", {
+  "type": "serial",
+  "theme": "light",
+  "dataProvider": [ {
+    "country": "01:00",
+    "visits": 1
+  }, {
+    "country": "02:00",
+    "visits": 2
+  }, {
+    "country": "03:00",
+    "visits": 9
+  }, {
+    "country": "04:00",
+    "visits": 2
+  }, {
+    "country": "05:00",
+    "visits": 2
+  }, {
+    "country": "06:00",
+    "visits": 4
+  }, {
+    "country": "07:00",
+    "visits": 8
+  }, {
+    "country": "08:00",
+    "visits": 7
+  }, {
+    "country": "09:00",
+    "visits": 5
+  }, {
+    "country": "10:00",
+    "visits": 3
+  }, {
+    "country": "11:00",
+    "visits": 4
+  }, {
+    "country": "12:00",
+    "visits": 4
+  }, {
+    "country": "13:00",
+    "visits": 9
+  }, {
+    "country": "14:00",
+    "visits": 8
+  }, {
+    "country": "15:00",
+    "visits": 2
+  }, {
+    "country": "16:00",
+    "visits": 5
+  }, {
+    "country": "17:00",
+    "visits": 8
+  }, {
+    "country": "18:00",
+    "visits": 8
+  }, {
+    "country": "19:00",
+    "visits": 2
+  }, {
+    "country": "20:00",
+    "visits": 6
+  }, {
+    "country": "21:00",
+    "visits": 4
+  }, {
+    "country": "22:00",
+    "visits": 10
+  }, {
+    "country": "23:00",
+    "visits": 9
+  }, {
+    "country": "24:00",
+    "visits": 7
+  } ],
+  "valueAxes": [ {
+    "gridColor": "#FFFFFF",
+    "gridAlpha": 0.2,
+    "dashLength": 0
+  } ],
+  "gridAboveGraphs": true,
+  "startDuration": 1,
+  "graphs": [ {
+    "balloonText": "[[category]]: <b>[[value]]</b>",
+    "fillAlphas": 0.8,
+    "lineAlpha": 0.2,
+    "type": "column",
+    "valueField": "visits"
+  } ],
+  "chartCursor": {
+    "categoryBalloonEnabled": false,
+    "cursorAlpha": 0,
+    "zoomable": false
+  },
+  "categoryField": "country",
+  "categoryAxis": {
+    "gridPosition": "start",
+    "gridAlpha": 0,
+    "tickPosition": "start",
+    "tickLength": 20
+  },
+  "export": {
+    "enabled": true
+  }
+
+} );

@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "init.js",
+  "sourceRoot": "../coffeescripts",
+  "sources": [
+    "init.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;EAAA,MAAM,CAAC,MAAP,GAAoB,IAAA,MAAA,CAAA;;EACpB,MAAM,CAAC,IAAP,GAAkB,IAAA,IAAA,CAAA;;EAClB,MAAM,CAAC,OAAP,GAAqB,IAAA,MAAA,CAAA;;EAErB,CAAA,CAAE,eAAF,CACE,CAAC,MADH,CACU,MAAM,CAAC,GADjB,CAEE,CAAC,MAFH,CAEU,IAAI,CAAC,GAFf,CAGE,CAAC,MAHH,CAGU,OAAO,CAAC,GAHlB;;EAKA,IAAI,CAAC,QAAL,CAAA;AATA"
+}
