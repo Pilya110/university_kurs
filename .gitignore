@@ -4,3 +4,5 @@ log/*
 vendor
 web/tmp
 web/assets/files/*
+access.log
+error.log
