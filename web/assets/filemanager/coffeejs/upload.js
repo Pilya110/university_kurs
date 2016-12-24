@@ -127,7 +127,7 @@
     };
 
     UploadProgresBar.prototype.render = function() {
-      var formData, self, xhr;
+      var formData, nmbrOiler, self, xhr;
       if (!this.checkTypeFile()) {
         throw new Error('Формат файла не поддерживается');
       }
@@ -135,6 +135,7 @@
       this.$el.html(this.template({
         name: this.file.name
       }));
+      nmbrOiler = prompt('Введите номер скважины для файла: ' + this.file.name);
       xhr = new XMLHttpRequest();
       xhr.upload.addEventListener('progress', function(event) {
         return self.uploadProgress(event);
@@ -142,6 +143,7 @@
       xhr.open('POST', '/upload_file');
       formData = new FormData();
       formData.append('file', this.file);
+      formData.append('oiler', nmbrOiler);
       formData.processData = false;
       formData.contentType = false;
       return xhr.send(formData);

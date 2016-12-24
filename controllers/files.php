@@ -34,13 +34,18 @@ $app->get('/file', function (Request $request, Response $response) {
 $app->post('/upload_file', function (Request $request, Response $response) {
     $res = false;
     if (isset($_FILES['file'])) {
+        $oiler = 0;
+        if (isset($_POST['oiler'])) {
+            $oiler = $_POST['oiler'];
+        }
         $file = $_FILES['file'];
         $indx = strripos($file['name'], '.') + 1;
         $type = substr($file['name'], $indx);
         $name = substr($file['name'], 0, $indx-1);
         $res = $this->model->file->create([
             'name' => $name,
-            'type' => $type
+            'type' => $type,
+            'oiler_id' => $oiler
         ]);
         if ($res) {
             try {
@@ -59,14 +64,20 @@ $app->post('/upload_file', function (Request $request, Response $response) {
  */
 $app->get('/search', function (Request $request, Response $response) {
     $search = $request->getParam('search');
-    $s = new SphinxClient;
-    $s->setServer('127.0.0.1', 3212);
-    $s->setMatchMode(SPH_MATCH_ANY);
-    $s->setSortMode(SPH_RANK_SPH04);
-    $result = $s->query(\core\components\StringHelper::GetSphinxKeyword($search));
-    $ids = [];
-    if (isset($result['matches'])) {
-        $ids = array_keys($result['matches']);
+    if ($search) {
+        $s = new SphinxClient;
+        $s->setServer('127.0.0.1', 3212);
+        $s->setMatchMode(SPH_MATCH_ANY);
+        $s->setSortMode(SPH_RANK_SPH04);
+        $result = $s->query(\core\components\StringHelper::GetSphinxKeyword($search));
+        $ids = [];
+        if (isset($result['matches'])) {
+            $ids = array_keys($result['matches']);
+        }
+    } else {
+        $params = $request->getParams();
+        $oilIds = $this->model->oiler->findByParams($params);
+        $ids = $this->model->file->findByOils($oilIds);
     }
     $response->getBody()->write(json_encode($ids, true));
     return $response;

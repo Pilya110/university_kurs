@@ -19,7 +19,8 @@
     Filter.prototype.className = 'col-md-12';
 
     Filter.prototype.events = {
-      'input [name="name"]': 'searchByName'
+      'input [name="name1"]': 'searchByName',
+      'click .srchbtn': 'searchOiler'
     };
 
     Filter.prototype.initialize = function() {
@@ -34,20 +35,10 @@
 
     Filter.prototype.searchByName = function() {
       var input;
-      input = this.$el.find('[name="name"]');
+      input = this.$el.find('[name="name1"]');
       this.searchName = input.val().toLowerCase();
       if (3 > this.searchName.length) {
         this.searchName = null;
-      }
-      return this.searchList();
-    };
-
-    Filter.prototype.searchByType = function() {
-      var input;
-      input = this.$el.find('[name="type"]');
-      this.searchType = input.val().toLowerCase();
-      if (0 === this.searchType.length) {
-        this.searchType = null;
       }
       return this.searchList();
     };
@@ -61,6 +52,25 @@
       return this.timeout = setTimeout(function() {
         return list.search(self.searchName);
       }, 500);
+    };
+
+    Filter.prototype.searchOiler = function() {
+      var cnt, data, el, elems, i, len, name, val;
+      elems = this.$el.find('[data-type="oil"]');
+      data = {};
+      cnt = 0;
+      for (i = 0, len = elems.length; i < len; i++) {
+        el = elems[i];
+        name = $(el).attr('name');
+        val = $(el).val();
+        if ('string' === typeof val && '' !== val) {
+          cnt++;
+          data[name] = val;
+        }
+      }
+      if (0 < cnt) {
+        return list.search(data);
+      }
     };
 
     return Filter;

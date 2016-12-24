@@ -4,7 +4,8 @@ class window.Filter extends Backbone.View
   timeout: null
   className: 'col-md-12'
   events: {
-    'input [name="name"]': 'searchByName'
+    'input [name="name1"]': 'searchByName'
+    'click .srchbtn': 'searchOiler'
   }
   initialize: () ->
     @render()
@@ -15,15 +16,9 @@ class window.Filter extends Backbone.View
       .html document.getElementById('filter-render').innerHTML
 
   searchByName: () ->
-    input = @$el.find '[name="name"]'
+    input = @$el.find '[name="name1"]'
     @searchName = input.val().toLowerCase()
     @searchName = null if 3 > @searchName.length
-    @searchList()
-
-  searchByType: () ->
-    input = @$el.find '[name="type"]'
-    @searchType = input.val().toLowerCase()
-    @searchType = null if 0 is @searchType.length
     @searchList()
 
   searchList: () ->
@@ -32,3 +27,16 @@ class window.Filter extends Backbone.View
     @timeout = setTimeout () ->
       list.search self.searchName
     , 500
+
+  searchOiler: () ->
+    elems = @$el.find '[data-type="oil"]'
+    data = {}
+    cnt = 0
+    for el in elems
+      name = $(el).attr 'name'
+      val = $(el).val()
+      if 'string' == typeof val && '' != val
+        cnt++
+        data[name] = val
+    if 0 < cnt
+      list.search data

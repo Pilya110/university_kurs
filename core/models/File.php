@@ -127,4 +127,15 @@ class File extends Base
         }
         return $content;
     }
+
+    public function findByOils($ids)
+    {
+        $res = $this->app->db->query('SELECT * FROM files WHERE oiler_id IN ('.implode(',', $ids).')');
+        $ar = $res->fetchAll(\PDO::FETCH_ASSOC);
+        $ids = [];
+        foreach ($ar as $v) {
+            $ids[] = $v['id'];
+        }
+        return $ids;
+    }
 }

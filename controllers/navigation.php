@@ -20,7 +20,7 @@ $app->get('/main', function (Request $request, Response $response) {
  * Redirect
  */
 $app->get('/', function (Request $request, Response $response) use ($app) {
-    return $response->withStatus(302)->withHeader('Location', '/main');
+    return $response->withStatus(302)->withHeader('Location', '/tables');
 });
 
 /*
@@ -37,6 +37,15 @@ $app->get('/countregusers', function (Request $request, Response $response) {
  */
 $app->get('/onlineusers', function (Request $request, Response $response) {
     $content = Haanga::load('onlineusers.dtl', [], true);
+    $response->getBody()->write($content);
+    return $response;
+});
+
+/*
+ * Edit tables
+ */
+$app->get('/tables', function (Request $request, Response $response) {
+    $content = Haanga::load('tables.dtl', [], true);
     $response->getBody()->write($content);
     return $response;
 });

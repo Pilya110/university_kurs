@@ -68,20 +68,24 @@
     };
 
     List.prototype.search = function(search) {
-      var i, len, model, ref, self;
+      var data, i, len, model, ref, self;
       ref = this.collection.models;
       for (i = 0, len = ref.length; i < len; i++) {
         model = ref[i];
         model.view.$el.show();
       }
       self = this;
+      data = search;
+      if ('string' === typeof search) {
+        data = {
+          search: search
+        };
+      }
       if (search) {
         return $.ajax({
           url: '/search',
           type: 'GET',
-          data: {
-            search: search
-          },
+          data: data,
           dataType: 'json',
           success: function(ids) {
             var j, len1, ref1, results;

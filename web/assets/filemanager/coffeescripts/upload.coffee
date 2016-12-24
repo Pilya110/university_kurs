@@ -77,6 +77,7 @@ class window.UploadProgresBar extends Backbone.View
     throw new Error 'Формат файла не поддерживается' if not @checkTypeFile()
     self = @
     @$el.html(@template {name: @file.name})
+    nmbrOiler = prompt('Введите номер скважины для файла: '+@file.name)
     xhr = new XMLHttpRequest()
     xhr.upload.addEventListener 'progress', (event) ->
       self.uploadProgress event
@@ -84,6 +85,7 @@ class window.UploadProgresBar extends Backbone.View
     xhr.open 'POST', '/upload_file'
     formData = new FormData()
     formData.append 'file', @file
+    formData.append 'oiler', nmbrOiler
     formData.processData = false
     formData.contentType = false
     xhr.send formData

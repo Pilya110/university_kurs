@@ -44,13 +44,16 @@ class window.List extends Backbone.View
     for model in @collection.models
       model.view.$el.show()
     self = @
+    data = search
+    if 'string' == typeof search
+      data = {
+        search: search
+      }
     if search
       $.ajax {
         url: '/search'
         type: 'GET'
-        data: {
-          search: search
-        }
+        data: data
         dataType: 'json'
         success: (ids) ->
           for model in self.collection.models

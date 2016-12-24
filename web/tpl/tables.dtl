@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description"content="">
+        <meta name="author"     content="">
+        <title>File Manager</title>
+
+        <link rel="stylesheet" href="/assets/css/jquery-ui.min.css"         type="text/css" />
+        <link rel="stylesheet" href="/assets/css/font-awesome.min.css"      type="text/css" />
+        <link rel="stylesheet" href="/assets/css/style.css"                 type="text/css" />
+        <link rel="stylesheet" href="/assets/css/bootstrap.min.css"         type="text/css" />
+        <link rel="stylesheet" href="/assets/css/bootstrap-theme.min.css"   type="text/css" />
+
+        <link rel="stylesheet" href="/assets/css/navigation.css"            type="text/css" />
+        <link rel="stylesheet" href="/assets/css/webix.css"                 type="text/css" />
+
+    </head>
+    <body>
+        <div class="col-md-12">
+        {% include "navigation.html"%}
+        </div>
+        <div class="col-md-12">
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="#table1" data-toggle="tab" style="font-size: 1.3em">Скважины</a></li>
+                <li><a href="#table2" data-toggle="tab" style="font-size: 1.3em">Файлы</a></li>
+            </ul>
+
+            <div class="tab-content">
+                <div class="tab-pane active" id="table1"></div>
+                <div class="tab-pane" id="table2"></div>
+            </div>
+        </div>
+
+        <script src="/assets/js/jquery.min.js"                  ></script>
+        <script src="/assets/js/jquery-ui.min.js"               ></script>
+        <script src="/assets/js/underscore-min.js"              ></script>
+        <script src="/assets/js/backbone-min.js"                ></script>
+        <script src="/assets/js/bootstrap.min.js"               ></script>
+
+
+        <script src="/assets/filemanager/coffeejs/table.js"></script>
+        <script>
+            (function() {
+                var t1 = new Table({
+                    table: 'oiler',
+                    fields: {
+                        id: 'ID',
+                        name: 'Наименование',
+                        field: 'Месторождение',
+                        number: 'Номер скважины',
+                        region: 'Регион',
+                        status: 'Текущее состояние',
+                        category: 'Категория скважины по МПР',
+                        date_start: 'Дата заложения скважины'
+                    }
+                });
+                var t2 = new Table({
+                    table: 'files',
+                    fields: {
+                        id: 'ID',
+                        oiler_id: 'ID Скважины',
+                        name: 'Наименование',
+                        type: 'Тип',
+                        text: 'Текст',
+                        date_create: 'Дата создания'
+                    }
+                });
+                $('#table1').html(t1.$el);
+                $('#table2').html(t2.$el);
+            }());
+        </script>
+    </body>
+</html>
